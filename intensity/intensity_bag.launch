@@ -1,0 +1,10 @@
+<launch>
+
+  <node name="image_view" pkg="image_view" type="image_view" args="image:=/camera/image image_transport:=raw"/>
+  <node name="reconfigure_gui" pkg="dynamic_reconfigure" type="reconfigure_gui"/>
+  <node name="base_smoother" pkg="cambar_smoother" type="cambar_smoother">
+	<remap from="input" to="/cambar_b2/pose_base"/>
+	<remap from="output" to="/cambar_b2/pose_base_smoothed"/>
+  </node>
+
+</launch>

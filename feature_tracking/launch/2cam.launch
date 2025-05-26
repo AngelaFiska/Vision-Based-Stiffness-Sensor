@@ -1,0 +1,44 @@
+<launch>
+
+	<node pkg="uvc_camera" type="camera_node" name="camr" args="_device:=/dev/video1">
+		<remap from="image_raw" to="image_rawr" />
+	</node>
+
+   	<node name="my_trackingr" pkg="feature_tracking" type="my_tracking" respawn="true" output="screen">
+	<rosparam command="load" file="$(find feature_tracking)/param_right.yaml" />  
+		<remap from="/image_raw" to="image_rawr" />
+		<remap from="/my_radius" to="my_radiusr" />
+		<remap from="/Force_MatMod" to="Force_MatModr" />
+		<remap from="/delta_x" to="delta_xr" />
+	</node>
+        <node name="filtered_rr" pkg="feature_tracking" type="filter" args="/my_radiusr" >
+	</node>
+
+        <node name="filtered_fr" pkg="feature_tracking" type="filter" args="/Force_MatModr" >
+        </node>
+
+        <node name="filtered_dr" pkg="feature_tracking" type="filter" args="/delta_xr" >
+        </node>
+  	
+	<node pkg="uvc_camera" type="camera_node" name="caml" args="_device:=/dev/video0">
+		<remap from="image_raw" to="image_rawl" />
+	</node>
+
+	<node name="my_trackingl" pkg="feature_tracking" type="my_tracking" respawn="true" output="screen">
+	<rosparam command="load" file="$(find feature_tracking)/param_left.yaml" />  
+		<remap from="/image_raw" to="image_rawl" />
+		<remap from="/my_radius" to="my_radiusl" />
+		<remap from="/Force_MatMod" to="Force_MatModl" />
+		<remap from="/delta_x" to="delta_xl" />
+		</node>
+
+	<node name="filtered_l" pkg="feature_tracking" type="filter" args="/my_radiusl ">
+        </node>
+
+        <node name="filtered_fl" pkg="feature_tracking" type="filter" args="/Force_MatModl" >
+        </node>
+
+        <node name="filtered_dl" pkg="feature_tracking" type="filter" args="/delta_xl" >
+        </node>
+</launch>
+

@@ -1,0 +1,22 @@
+param:
+  H_MIN: 55
+  H_MAX: 100
+  S_MIN: 60
+  S_MAX: 228
+  V_MIN: 32
+  V_MAX: 256
+canny:
+  UP_TH: 160
+  LW_TH: 80
+hough:
+  HOUGH: false
+position:
+  POS: 1 
+sensor_param:
+  R_0: 105
+  X_0: 3.5
+  K: 356
+  MAX_R: 200
+calibration:
+  camera_matrix: [811.856162, 0.000000, 311.068632, 0.000000, 815.215163, 243.669911, 0.000000, 0.000000, 1.000000 ]
+  distortion_coefficients: [0.342933, -1.147055, 0.004928, -0.003472, 0.000000]

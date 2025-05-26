@@ -1,0 +1,6 @@
+<launch>
+	<rosparam file="$(find endoscopic_cam)/parameters.yaml" command="load" />  
+	<node name="camera_node" pkg="uvc_camera" type="uvc_camera_node"/>
+   	<node name="endoscopic_cam_node" pkg="endoscopic_cam" type="endoscopic_cam_node" respawn="true" output="screen" />
+
+</launch>

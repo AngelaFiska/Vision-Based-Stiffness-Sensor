@@ -1,0 +1,41 @@
+green_param:
+  H_MIN: 61
+  H_MAX: 95
+  S_MIN: 78
+  S_MAX: 193
+  V_MIN: 0
+  V_MAX: 256
+red_param:
+  H_MIN: 0
+  H_MAX: 47
+  S_MIN: 101
+  S_MAX: 256
+  V_MIN: 0
+  V_MAX: 256
+blue_param:
+  H_MIN: 108
+  H_MAX: 134
+  S_MIN: 104
+  S_MAX: 135
+  V_MIN: 90
+  V_MAX: 256
+sensor_param:
+  resolution: 12.7
+  K1: 0.03
+  K2: 0.25 
+  probe_dx12x: 8.82
+  probe_dx12y: 5.125
+  probe_dx13x: 8.82
+  probe_dx13y: 15.37
+  probe_dx14x: 17.15
+  probe_dx14y: 0
+  probe_dx23x: 0
+  probe_dy23y: 10.245
+options:
+  useMorphOps: true
+  rviz: true
+  alpha: 0.8
+  lambda: 0.2
+ROIS:
+ roi_points: [0, 0, 0, 200, 220, 0, 220, 200]
+ roi_size: [200, 300]
