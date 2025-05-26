@@ -1,0 +1,8 @@
+prefix=/home/angela/catkin_ws/install
+
+Name: schunk_description
+Description: Description of schunk_description
+Version: 0.6.2
+Cflags: 
+Libs: -L/home/angela/catkin_ws/install/lib 
+Requires: 

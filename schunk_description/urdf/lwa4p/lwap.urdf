@@ -1,0 +1,11 @@
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+xmlns:xacro="http://www.ros.org/wiki/xacro"
+name="schunk">
+<xacro:include filename="$(find schunk_description)/urdf/lwa4p/lwa4p.urdf.xacro" />
+
+<xacro:schunk_lwa4p parent="base_link" name="schunk" has_podest="false">
+ <origin xyz="0 0 0" rpy="0 0 0">
+</xacro:schunk_lwa4p>
+</robot>
